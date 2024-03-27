@@ -7,6 +7,7 @@ import FeedbackCustomers from "../utils/feedback";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiMinus } from "react-icons/fi";
 import faqs from "../utils/faq";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [openAccordionId, setOpenAccordionId] = useState(null);
@@ -222,9 +223,11 @@ const Home = () => {
           <p className="text-sm text-gray-400 font-sans p-4">
             Contact our support team for assistance.
           </p>
-          <button className="bg-amber-950 border text-white font-semibold h-12 w-24 hover:bg-transparent hover:border-amber-950 hover:text-amber-950">
-            Contact
-          </button>
+          <Link to={"/contact"}>
+            <button className="bg-amber-950 border text-white font-semibold h-12 w-24 hover:bg-transparent hover:border-amber-950 hover:text-amber-950">
+              Contact
+            </button>
+          </Link>
         </div>
       </section>
       <section>
@@ -247,7 +250,7 @@ const Home = () => {
             </div>
           </div>
           <div className="pt-4">
-            <img src={maps} alt="" srcset="" />
+            <img src={maps} alt="" />
           </div>
         </div>
       </section>

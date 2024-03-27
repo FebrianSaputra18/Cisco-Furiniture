@@ -45,7 +45,6 @@ const FeedbackCustomers = () => {
             />
           </div>
           <div className="pt-3 text-gray-400 text-sm">{item.company}</div>
-
         </div>
       ))}
     </div>

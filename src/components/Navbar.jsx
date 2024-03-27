@@ -1,5 +1,6 @@
 import React from "react";
 import { logo } from "../assets/icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,10 +11,26 @@ const Navbar = () => {
           <h1 className="font-playfair text-2xl text-amber-700">Furniture</h1>
         </div>
         <ul className="flex gap-6 text-md items-center font-bold font-playfair">
-          <li className="active:text-amber-700 text-amber-700">Home</li>
-          <li className="active:text-amber-700 text-amber-200">About</li>
-          <li className="active:text-amber-700 text-amber-200">Product</li>
-          <li className="active:text-amber-700 text-amber-200">Contact</li>
+          <li>
+            <Link to="/" className="text-amber-700 hover:text-amber-500">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="text-amber-200 hover:text-amber-500">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/product" className="text-amber-200 hover:text-amber-500">
+              Product
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="text-amber-200 hover:text-amber-500">
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-left flex gap-10">
