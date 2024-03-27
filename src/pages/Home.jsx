@@ -247,7 +247,7 @@ const Home = () => {
             </div>
           </div>
           <div className="pt-4">
-            <img src={maps} alt="" srcset="" />
+            <img src={maps} alt="" />
           </div>
         </div>
       </section>
