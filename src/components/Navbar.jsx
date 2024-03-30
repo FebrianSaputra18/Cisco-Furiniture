@@ -2,7 +2,7 @@ import React from "react";
 import { logo } from "../assets/icons";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ toggleCart }) => {
   return (
     <div className="flex justify-between h-24 w-full mx-auto px-24 items-center shadow-md bg-white">
       <div className="navbar-right flex items-center">
@@ -66,7 +66,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <button className=" text-amber-700">
+        <button onClick={toggleCart} className=" text-amber-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

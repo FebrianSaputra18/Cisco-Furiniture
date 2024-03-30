@@ -9,8 +9,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const ProductData = () => {
+  const navigate = useNavigate()
   const products = [
     {
       id: 1,
@@ -55,7 +57,6 @@ const ProductData = () => {
       tags: ["Elegan", "Minimalis", "Modern"],
     },
   ];
-  console.log('product', products)
   const settings = {
     dots: true,
     infinite: true,
@@ -63,11 +64,14 @@ const ProductData = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
   };
+  const detailProduct = (productId) => {
+    navigate(`/product/${productId}`)
+  }
 
   return (
     <Slider {...settings}>
       {products.map((product) => (
-        <motion.div key={product.id} whileHover={{ scale: 1.1 }} >
+        <motion.div key={product.id} whileHover={{ scale: 1.1 }} onClick={() => detailProduct(product.id)}>
           <div className="p-2 cursor-pointer">
             <div
               className="h-64 w-auto overflow-hidden rounded-t-md shadow-sm"
