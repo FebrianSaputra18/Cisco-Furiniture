@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { logo } from "../assets/icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ toggleCart }) => {
+  const location = useLocation();
+  const [activePage, setActivePage] = useState('');
+
+  useEffect(() => {
+    const path = location.pathname;
+    setActivePage(path);
+  }, [location]);
   return (
     <div className="flex justify-between h-24 w-full mx-auto px-24 items-center shadow-md bg-white">
       <div className="navbar-right flex items-center">
@@ -12,22 +19,50 @@ const Navbar = ({ toggleCart }) => {
         </div>
         <ul className="flex gap-6 text-md items-center font-bold font-playfair">
           <li>
-            <Link to="/" className="text-amber-700 hover:text-amber-500">
+            <Link
+              to="/"
+              className={
+                activePage === "/"
+                  ? "text-amber-700 hover:text-amber-500"
+                  : "text-amber-200 hover:text-amber-500"
+              }
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="text-amber-200 hover:text-amber-500">
+            <Link
+              to="/about"
+              className={
+                activePage === "/about"
+                  ? "text-amber-700 hover:text-amber-500"
+                  : "text-amber-200 hover:text-amber-500"
+              }
+            >
               About
             </Link>
           </li>
           <li>
-            <Link to="/product" className="text-amber-200 hover:text-amber-500">
+            <Link
+              to="/product"
+              className={
+                activePage === "/product"
+                  ? "text-amber-700 hover:text-amber-500"
+                  : "text-amber-200 hover:text-amber-500"
+              }
+            >
               Product
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="text-amber-200 hover:text-amber-500">
+            <Link
+              to="/contact"
+              className={
+                activePage === "/contact"
+                  ? "text-amber-700 hover:text-amber-500"
+                  : "text-amber-200 hover:text-amber-500"
+              }
+            >
               Contact
             </Link>
           </li>

@@ -39,8 +39,8 @@ const ViewCart = () => {
         </div>
         <div className="bg-white px-24 py-12">
           <div className="flex justify-between gap-32">
-            <table class="table-auto w-full border text-amber-900">
-              <thead>
+            <table class="table-auto w-full h-auto border text-amber-900">
+              <thead className="border-b h-10">
                 <tr>
                   <th>Product</th>
                   <th>Price</th>
@@ -49,14 +49,14 @@ const ViewCart = () => {
                 </tr>
               </thead>
               {products.map((item) => (
-                <tbody className="text-center">
+                <tbody key={item.id} className="text-center my-2">
                   <tr>
-                    <td className="flex items-center justify-center">
+                    <td className="flex items-center justify-center gap-2">
                       <img className="w-40" src={item.image} alt="product" />
                       {item.title}
                     </td>
                     <td>{item.price}</td>
-                    <td className="">
+                    <td>
                       <div className="flex gap-3 border border-amber-900 w-16 justify-center text-center font-sans my-2">
                         <button>-</button>
                         <span>1</span>
@@ -68,17 +68,21 @@ const ViewCart = () => {
                 </tbody>
               ))}
             </table>
-            <div className="flex flex-col w-[400px]">
-              <h1>Cart Totals</h1>
-              <div className="flex justify-between">
+            <div className="flex text-amber-900 flex-col w-[400px] h-[200px] text-center px-5 py-2 border border-amber-900">
+              <h1 className="text-2xl font-semibold py-4">Cart Totals</h1>
+              <div className="flex justify-between pb-2 font-sans">
                 <p>Subtotal</p>
-                <p>1.223.000</p>
+                <p className="text-gray-400">Rp. 1.223.000</p>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between font-sans">
                 <p>Total</p>
                 <p>Rp. 1.350.000,00</p>
               </div>
-              <button>Continue to Payment</button>
+              <div className="bg-amber-900 text-white my-6 hover:bg-white hover:text-amber-900 border border-amber-900 font-semibold">
+                <Link to='/view-cart/payment'>
+                  <button>Continue to Payment</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

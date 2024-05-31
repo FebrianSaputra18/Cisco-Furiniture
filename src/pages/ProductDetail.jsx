@@ -57,7 +57,6 @@ const ProductDetail = ({ products }) => {
               Product
             </Link>
             <IoIosArrowForward className="mx-4" />
-            <p>{productId}</p>
           </li>
         </ol>
       </div>

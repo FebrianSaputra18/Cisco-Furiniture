@@ -10,6 +10,7 @@ import ProductDetail from "./pages/ProductDetail";
 import products from "./data/product";
 import Cart from "./components/Cart";
 import ViewCart from "./pages/ViewCart";
+import Payment from "./pages/Payment";
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/product/:productId" element={<ProductDetail products={products} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/view-cart" element={<ViewCart />} />
+        <Route path="/view-cart/payment" element={<Payment />} />
       </Routes>
       <Footer />
     </div>
